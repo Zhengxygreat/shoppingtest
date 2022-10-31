@@ -3,23 +3,21 @@
     <Header></Header>
     <!-- 所有的一级路由组件都在这里显示 -->
     <router-view></router-view>
-    <Footer></Footer>
+    <Footer v-show="!$route.meta.isHideFooter"></Footer>
   </div>
 </template>
 
 <script>
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
-    Footer
-  }
-}
+    Footer,
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style lang="less" scoped></style>

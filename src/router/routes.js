@@ -9,16 +9,25 @@ export default [
       path: '/',
       component:Home
     },
-    {
-      path: '/search',
-      component:Search
+  {
+      name:'search',
+      path: '/search/:keyword?',
+      component:Search,
+      // props:true,//只映射params参数
+      props:(route)=>({keyword2:route.params.keyword,})
     },
     {
       path: '/register',
-      component:Register
+      component: Register,
+      meta: {
+        isHideFooter:true
+      }
     },
     {
       path: '/login',
-      component:Login
+      component: Login,
+      meta: {
+        isHideFooter:true
+      }
     }
   ]
